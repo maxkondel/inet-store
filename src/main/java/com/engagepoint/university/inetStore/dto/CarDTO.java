@@ -1,19 +1,29 @@
-package com.engagepoint.university.inetStore.entity;
+package com.engagepoint.university.inetStore.dto;
+
+import com.engagepoint.university.inetStore.dto.base.BaseDTO;
 
 
-import java.io.Serializable;
+public class CarDTO implements BaseDTO {
 
-public class Car implements Serializable {
+    private long id;
     private int year;
     private String color;
     private String manufacturer;
     private String model;
 
-    public Car(String model,int year,String color,String manufacturer){
+    public CarDTO(String model, int year, String manufacturer, String color){
         this.year = year;
         this.color = color;
         this.manufacturer = manufacturer;
         this.model = model;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public int getYear() {

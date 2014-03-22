@@ -1,7 +1,8 @@
 package com.engagepoint.university.inetStore.controller;
 
-import com.engagepoint.university.inetStore.entity.Car;
+import com.engagepoint.university.inetStore.dto.CarDTO;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -12,12 +13,12 @@ import java.util.UUID;
 @Named
 @SessionScoped
 public class TableBean implements Serializable{
-    private final static String[] colors;
+    private final static String[] colors = new String[10];;
 
-    private final static String[] manufacturers;
+    private final static String[] manufacturers = new String[10];;
 
-    static {
-        colors = new String[10];
+    @PostConstruct
+    private void init(){
         colors[0] = "Black";
         colors[1] = "White";
         colors[2] = "Green";
@@ -29,7 +30,6 @@ public class TableBean implements Serializable{
         colors[8] = "Brown";
         colors[9] = "Maroon";
 
-        manufacturers = new String[10];
         manufacturers[0] = "Mercedes";
         manufacturers[1] = "BMW";
         manufacturers[2] = "Volvo";
@@ -42,30 +42,30 @@ public class TableBean implements Serializable{
         manufacturers[9] = "Ford";
     }
 
-    private List<Car> cars;
+    private List<CarDTO> cars;
 
-    private Car selectedCar;
+    private CarDTO selectedCar;
 
     public TableBean() {
-        cars = new ArrayList<Car>();
+        cars = new ArrayList<CarDTO>();
 
         populateRandomCars(cars, 50);
     }
 
-    public Car getSelectedCar() {
+    public CarDTO getSelectedCar() {
         return selectedCar;
     }
 
-    public void setSelectedCar(Car selectedCar) {
+    public void setSelectedCar(CarDTO selectedCar) {
         this.selectedCar = selectedCar;
     }
 
-    private void populateRandomCars(List<Car> list, int size) {
+    private void populateRandomCars(List<CarDTO> list, int size) {
         for(int i = 0 ; i < size ; i++)
-            list.add(new Car(getRandomModel(), getRandomYear(), getRandomManufacturer(), getRandomColor()));
+            list.add(new CarDTO(getRandomModel(), getRandomYear(), getRandomManufacturer(), getRandomColor()));
     }
 
-    public List<Car> getCars() {
+    public List<CarDTO> getCars() {
         return cars;
     }
 
