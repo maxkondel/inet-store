@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/template/template.xhtml">
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+        <h:form>
+            <h:panelGrid columns="2" cellpadding="6">
+
+                <h:outputText value="Model:" style="font-weight: bold"/>
+                <h:outputText value="#{tableBean.selectedCar.model}"/>
+
+                <h:outputText value="Year:" style="font-weight: bold"/>
+                <h:outputText value="#{tableBean.selectedCar.year}"/>
+
+                <h:outputText value="Color:" style="font-weight: bold"/>
+                <h:outputText value="#{tableBean.selectedCar.color}"/>
+
+            </h:panelGrid>
+        </h:form>
+	</ui:define>
+</ui:composition>
