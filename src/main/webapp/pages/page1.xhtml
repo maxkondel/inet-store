@@ -11,6 +11,8 @@
 
         <h:form id="form">
 
+            <p:commandButton value="Add mobile" actionListener="#{mobileController.addMobile()}" update="form"/>
+
             <p:dataGrid var="mobile"
                         value="#{mobileController.mobileDTOs}"
                         columns="3"
@@ -23,15 +25,16 @@
 
                         <h:outputText value="#{mobile.model}" />
 
-                        <p:commandLink title="View Detail" action="page2">
+                        <p:commandButton value="View Detail" action="page2">
                             <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
                             <f:setPropertyActionListener value="#{mobile}"
-                                                         target="#{mobileController.selectedMobile}" />
-                        </p:commandLink>
+                                                         target="#{mobileContentController.selectedMobile}" />
+                        </p:commandButton>
                     </h:panelGrid>
                 </p:panel>
 
             </p:dataGrid>
+
 
         </h:form>
 

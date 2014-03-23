@@ -8,17 +8,17 @@
 	</ui:define>
 	<ui:define name="content">
         <h:form>
-            <p:graphicImage value="/imagesForMobiles/#{mobileController.selectedMobile.image}.jpg"/>
+            <p:graphicImage value="/imagesForMobiles/#{mobileContentController.selectedMobile.image}.jpg"/>
             <h:panelGrid columns="2" cellpadding="6">
 
+                <h:outputText value="Brand:" style="font-weight: bold"/>
+                <h:outputText value="#{mobileContentController.selectedMobile.brand}"/>
+
                 <h:outputText value="Model:" style="font-weight: bold"/>
-                <h:outputText value="#{mobileController.selectedMobile.brand}"/>
+                <h:outputText value="#{mobileContentController.selectedMobile.model}"/>
 
-                <h:outputText value="Year:" style="font-weight: bold"/>
-                <h:outputText value="#{mobileController.selectedMobile.model}"/>
-
-                <h:outputText value="Color:" style="font-weight: bold"/>
-                <h:outputText value="#{mobileController.selectedMobile.options}"/>
+                <h:outputText value="Options:" style="font-weight: bold"/>
+                <h:outputText value="#{mobileContentController.selectedMobile.options}"/>
 
             </h:panelGrid>
         </h:form>
