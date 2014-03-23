@@ -3,14 +3,14 @@ package com.engagepoint.university.inetStore.dataSource;
 import com.engagepoint.university.inetStore.entity.Mobile;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Named
-@ApplicationScoped
+@SessionScoped
 public class DataSource implements Serializable {
 
     private int id = 0;
