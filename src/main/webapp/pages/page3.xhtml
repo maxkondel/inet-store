@@ -7,6 +7,20 @@
 	<ui:define name="metadata">
 	</ui:define>
 	<ui:define name="content">
-		This is page 3 
+        <h:form>
+            <p:graphicImage value="/resources/images/mobiles/#{mobileContentController.selectedMobile.image}.jpg"/>
+            <h:panelGrid columns="2" cellpadding="6">
+
+                <h:outputText value="Brand:" style="font-weight: bold"/>
+                <h:outputText value="#{mobileContentController.selectedMobile.brand}"/>
+
+                <h:outputText value="Model:" style="font-weight: bold"/>
+                <h:outputText value="#{mobileContentController.selectedMobile.model}"/>
+
+                <h:outputText value="Options:" style="font-weight: bold"/>
+                <h:outputText value="#{mobileContentController.selectedMobile.options}"/>
+
+            </h:panelGrid>
+        </h:form>
 	</ui:define>
 </ui:composition>
