@@ -4,8 +4,8 @@ import com.engagepoint.acceptancetest.base.steps.JbehaveBaseSteps;
 import net.thucydides.core.pages.Pages;
 import org.jbehave.core.annotations.When;
 
-public class ViewCarSteps extends JbehaveBaseSteps {
-    public ViewCarSteps(Pages pages) {
+public class ViewMobileSteps extends JbehaveBaseSteps {
+    public ViewMobileSteps(Pages pages) {
         super(pages);
     }
 
