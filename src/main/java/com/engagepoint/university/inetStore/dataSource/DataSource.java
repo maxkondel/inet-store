@@ -2,6 +2,7 @@ package com.engagepoint.university.inetStore.dataSource;
 
 import com.engagepoint.university.inetStore.entity.Mobile;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -15,6 +16,9 @@ public class DataSource implements Serializable {
     private int id = 0;
 
     private List<Mobile> mobiles= new ArrayList<>();
+
+    @PostConstruct
+    private void init(){}
 
     public List<Mobile> getMobiles() {
         return mobiles;
