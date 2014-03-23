@@ -11,22 +11,22 @@
 
         <h:form id="form">
 
-            <p:dataGrid var="car"
-                        value="#{tableBean.cars}"
+            <p:dataGrid var="mobile"
+                        value="#{mobileController.mobileDTOs}"
                         columns="3"
                         rows="10"
                         paginator="true">
 
-                <p:panel header="#{car.model}" style="text-align:center">
+                <p:panel header="#{mobile.brand}" style="text-align:center">
                     <h:panelGrid columns="1" style="width:100%">
-                        <p:graphicImage value="/images/cars/#{car.manufacturer}.jpg"/>
+                        <p:graphicImage value="imagesForMobiles/#{mobile.image}.jpg"/>
 
-                        <h:outputText value="#{car.year}" />
+                        <h:outputText value="#{mobile.model}" />
 
                         <p:commandLink title="View Detail" action="page2">
                             <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
-                            <f:setPropertyActionListener value="#{car}"
-                                                         target="#{tableBean.selectedCar}" />
+                            <f:setPropertyActionListener value="#{mobile}"
+                                                         target="#{mobileController.selectedMobile}" />
                         </p:commandLink>
                     </h:panelGrid>
                 </p:panel>

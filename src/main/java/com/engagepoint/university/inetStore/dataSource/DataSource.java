@@ -1,6 +1,6 @@
 package com.engagepoint.university.inetStore.dataSource;
 
-import com.engagepoint.university.inetStore.entity.CarEntity;
+import com.engagepoint.university.inetStore.entity.Mobile;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
@@ -12,13 +12,23 @@ import java.util.List;
 @ApplicationScoped
 public class DataSource implements Serializable {
 
-    private List<CarEntity> cars= new ArrayList<>();
+    private int id = 0;
 
-    public List<CarEntity> getCars() {
-        return cars;
+    private List<Mobile> mobiles= new ArrayList<>();
+
+    public List<Mobile> getMobiles() {
+        return mobiles;
     }
 
-    public void setCars(List<CarEntity> cars) {
-        this.cars = cars;
+    public void setMobiles(List<Mobile> mobiles) {
+        this.mobiles = mobiles;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId() {
+        this.id = id+1;
     }
 }
